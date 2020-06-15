@@ -1,11 +1,12 @@
 import React from "react";
+import logo from "../ac_logo.png";
 
 import "../styles/Home.css";
 
 function Home() {
   return (
     <div className="home">
-      <h2>Home</h2>
+      <img className="logo" src={logo} alt="logo" />
     </div>
   );
 }

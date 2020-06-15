@@ -7,6 +7,8 @@ import Villagers from "./components/Villagers";
 import Critters from "./components/Critters";
 import Fossils from "./components/Fossils";
 import Art from "./components/Art";
+import Songs from "./components/Songs";
+import Items from "./components/Items";
 
 import "./styles/App.css";
 
@@ -23,6 +25,8 @@ function App() {
             <Critters path="/critters" />
             <Fossils path="/fossils" />
             <Art path="/art" />
+            <Songs path="/songs" />
+            <Items path="/items" />
           </Router>
         </div>
       </div>

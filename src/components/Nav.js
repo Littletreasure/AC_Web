@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import "../styles/Nav.css";
+import homebutton from "../home.png";
 
 class Nav extends Component {
   state = {};
@@ -27,9 +28,21 @@ class Nav extends Component {
             <h3>Art</h3>
           </Link>
         </div>
-        <h2>Songs</h2>
-
-        <h2>Items</h2>
+        <div key="songs">
+          <Link className="link" to="/songs">
+            <h3>Songs</h3>
+          </Link>
+        </div>
+        <div key="items">
+          <Link className="link" to="/items">
+            <h3>Items</h3>
+          </Link>
+        </div>
+        <div key="home">
+          <Link to="/">
+            <img className="homebutton" src={homebutton} alt="home"></img>
+          </Link>
+        </div>
       </div>
     );
   }
