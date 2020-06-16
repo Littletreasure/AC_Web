@@ -1,12 +1,38 @@
 import React, { Component } from "react";
 import "../styles/Songs.css";
+import * as api from "../utils/api";
 
 class Songs extends Component {
-  state = {};
+  state = {
+    songs: [],
+    isLoading: true,
+  };
+
+  componentDidMount() {
+    api.getSongs().then((songs) => {
+      console.log(songs);
+      this.setState({ songs });
+    });
+  }
   render() {
+    const { songs } = this.state;
     return (
       <div className="songsBody">
-        <h2>Songs</h2>
+        <h1>Songs</h1>
+        <div className="songs">
+          {songs.map((song) => {
+            return (
+              <div className="song" key={song.id}>
+                <p>{song.name["name-EUen"]}</p>
+                <img
+                  className="image"
+                  alt={song.name["name-EUen"]}
+                  src={song.image_uri}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

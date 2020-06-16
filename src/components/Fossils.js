@@ -1,12 +1,37 @@
 import React, { Component } from "react";
 import "../styles/Fossils.css";
+import * as api from "../utils/api";
 
 class Fossils extends Component {
-  state = {};
+  state = {
+    fossils: [],
+    isLoading: true,
+  };
+
+  componentDidMount() {
+    api.getFossils().then((fossils) => {
+      this.setState({ fossils });
+    });
+  }
   render() {
+    const { fossils } = this.state;
     return (
       <div className="fossilsBody">
-        <h2>Fossils</h2>
+        <h1>Fossils</h1>
+        <div className="fossils">
+          {fossils.map((fossil) => {
+            return (
+              <div className="fossil" key={fossil["file-name"]}>
+                <p>{fossil.name["name-EUen"]}</p>
+                <img
+                  className="image"
+                  alt={fossil.name["name-EUen"]}
+                  src={fossil.image_uri}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }

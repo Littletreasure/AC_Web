@@ -5,12 +5,11 @@ import * as api from "../utils/api";
 class Villagers extends Component {
   state = {
     villagers: [],
-    isLoading: false,
+    isLoading: true,
   };
 
   componentDidMount() {
     api.getVillagers().then((villagers) => {
-      console.log(villagers);
       this.setState({ villagers });
     });
   }
@@ -18,16 +17,21 @@ class Villagers extends Component {
     const { villagers } = this.state;
     return (
       <div className="villagersBody">
-        <h2>Villagers</h2>
-
-        {villagers.map((villager) => {
-          return (
-            <p className="villager" key={villager.id}>
-              {villager.id}
-              {villager.name["name-EUen"]}
-            </p>
-          );
-        })}
+        <h1>Villagers</h1>
+        <div className="villagers">
+          {villagers.map((villager) => {
+            return (
+              <div className="villager" key={villager.id}>
+                <p>{villager.name["name-EUen"]}</p>
+                <img
+                  className="icon"
+                  alt={villager.name["name-EUen"]}
+                  src={villager.icon_uri}
+                />
+              </div>
+            );
+          })}
+        </div>
       </div>
     );
   }
