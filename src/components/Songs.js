@@ -10,29 +10,32 @@ class Songs extends Component {
 
   componentDidMount() {
     api.getSongs().then((songs) => {
-      console.log(songs);
-      this.setState({ songs });
+      this.setState({ songs, isLoading: false });
     });
   }
   render() {
-    const { songs } = this.state;
+    const { songs, isLoading } = this.state;
     return (
       <div className="songsBody">
         <h1>Songs</h1>
-        <div className="songs">
-          {songs.map((song) => {
-            return (
-              <div className="song" key={song.id}>
-                <p>{song.name["name-EUen"]}</p>
-                <img
-                  className="image"
-                  alt={song.name["name-EUen"]}
-                  src={song.image_uri}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {isLoading ? (
+          <p className="loading">Loading ...</p>
+        ) : (
+          <div className="songs">
+            {songs.map((song) => {
+              return (
+                <div className="song" key={song.id}>
+                  <p>{song.name["name-EUen"]}</p>
+                  <img
+                    className="image"
+                    alt={song.name["name-EUen"]}
+                    src={song.image_uri}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

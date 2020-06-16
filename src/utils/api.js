@@ -17,3 +17,9 @@ export const getSongs = () => {
     return response.data;
   });
 };
+
+export const getArt = () => {
+  return axios.get("http://acnhapi.com/v1a/art/").then((response) => {
+    return response.data;
+  });
+};

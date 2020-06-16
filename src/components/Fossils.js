@@ -10,28 +10,32 @@ class Fossils extends Component {
 
   componentDidMount() {
     api.getFossils().then((fossils) => {
-      this.setState({ fossils });
+      this.setState({ fossils, isLoading: false });
     });
   }
   render() {
-    const { fossils } = this.state;
+    const { fossils, isLoading } = this.state;
     return (
       <div className="fossilsBody">
         <h1>Fossils</h1>
-        <div className="fossils">
-          {fossils.map((fossil) => {
-            return (
-              <div className="fossil" key={fossil["file-name"]}>
-                <p>{fossil.name["name-EUen"]}</p>
-                <img
-                  className="image"
-                  alt={fossil.name["name-EUen"]}
-                  src={fossil.image_uri}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {isLoading ? (
+          <p className="loading">Loading ...</p>
+        ) : (
+          <div className="fossils">
+            {fossils.map((fossil) => {
+              return (
+                <div className="fossil" key={fossil["file-name"]}>
+                  <p>{fossil.name["name-EUen"]}</p>
+                  <img
+                    className="image"
+                    alt={fossil.name["name-EUen"]}
+                    src={fossil.image_uri}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }

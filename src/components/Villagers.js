@@ -10,28 +10,32 @@ class Villagers extends Component {
 
   componentDidMount() {
     api.getVillagers().then((villagers) => {
-      this.setState({ villagers });
+      this.setState({ villagers, isLoading: false });
     });
   }
   render() {
-    const { villagers } = this.state;
+    const { villagers, isLoading } = this.state;
     return (
       <div className="villagersBody">
         <h1>Villagers</h1>
-        <div className="villagers">
-          {villagers.map((villager) => {
-            return (
-              <div className="villager" key={villager.id}>
-                <p>{villager.name["name-EUen"]}</p>
-                <img
-                  className="icon"
-                  alt={villager.name["name-EUen"]}
-                  src={villager.icon_uri}
-                />
-              </div>
-            );
-          })}
-        </div>
+        {isLoading ? (
+          <p className="loading">Loading ...</p>
+        ) : (
+          <div className="villagers">
+            {villagers.map((villager) => {
+              return (
+                <div className="villager" key={villager.id}>
+                  <p>{villager.name["name-EUen"]}</p>
+                  <img
+                    className="icon"
+                    alt={villager.name["name-EUen"]}
+                    src={villager.icon_uri}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        )}
       </div>
     );
   }
