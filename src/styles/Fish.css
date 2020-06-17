@@ -1,35 +1,34 @@
-.villagersBody {
+.fishBody {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
 }
-.villagers {
+
+.fish1 {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  background-color: red;
+  padding-top: 10px;
 }
-.villager {
+
+.fishSingle {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 10px;
-  background-color: darkkhaki;
-  box-shadow: 5px 5px 5px rgb(59, 71, 38);
+  background-color: rgb(107, 115, 189);
+  box-shadow: 5px 5px 5px rgb(38, 43, 71);
   border-radius: 10px;
   margin: 5px;
 }
-.villager p {
-  text-align: center;
-
+.fishSingle p {
   margin: 0;
 }
 .loading {
   font-size: 20px;
   font-weight: bold;
   color: white;
-}
-.link {
-  text-decoration: none;
 }

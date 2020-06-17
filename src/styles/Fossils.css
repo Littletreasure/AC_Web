@@ -3,7 +3,6 @@
   flex-direction: column;
   align-items: center;
   min-height: 100vh;
-  padding: 10px;
 }
 .fossils {
   display: flex;
@@ -15,9 +14,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 30px;
-  padding-left: 5px;
-  padding-right: 5px;
+  padding: 10px;
+  background-color: rgb(189, 119, 107);
+  box-shadow: 5px 5px 5px rgb(71, 46, 38);
+  border-radius: 10px;
+  margin: 5px;
 }
 .fossil p {
   margin: 0;

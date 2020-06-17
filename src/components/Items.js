@@ -6,7 +6,7 @@ class Items extends Component {
   render() {
     return (
       <div className="itemsBody">
-        <h2>Items</h2>
+        <h1>Items</h1>
       </div>
     );
   }

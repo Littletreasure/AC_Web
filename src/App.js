@@ -9,6 +9,7 @@ import Fossils from "./components/Fossils";
 import Art from "./components/Art";
 import Songs from "./components/Songs";
 import Items from "./components/Items";
+import SingleVillager from "./components/SingleVillager";
 
 import "./styles/App.css";
 
@@ -27,6 +28,7 @@ function App() {
             <Art path="/art" />
             <Songs path="/songs" />
             <Items path="/items" />
+            <SingleVillager path="/villagers/:villager_id" />
           </Router>
         </div>
       </div>

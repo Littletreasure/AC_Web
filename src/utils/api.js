@@ -6,6 +6,14 @@ export const getVillagers = () => {
   });
 };
 
+export const getVillagerById = (id) => {
+  return axios
+    .get(`http://acnhapi.com/v1a/villagers/${id}`)
+    .then((response) => {
+      return response.data;
+    });
+};
+
 export const getFossils = () => {
   return axios.get("http://acnhapi.com/v1a/fossils/").then((response) => {
     return response.data;
@@ -20,6 +28,18 @@ export const getSongs = () => {
 
 export const getArt = () => {
   return axios.get("http://acnhapi.com/v1a/art/").then((response) => {
+    return response.data;
+  });
+};
+
+export const getFish = () => {
+  return axios.get("http://acnhapi.com/v1a/fish/").then((response) => {
+    return response.data;
+  });
+};
+
+export const getInsects = () => {
+  return axios.get("http://acnhapi.com/v1a/bugs/").then((response) => {
     return response.data;
   });
 };

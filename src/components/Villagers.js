@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Villagers.css";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 
 class Villagers extends Component {
   state = {
@@ -25,12 +26,14 @@ class Villagers extends Component {
             {villagers.map((villager) => {
               return (
                 <div className="villager" key={villager.id}>
-                  <p>{villager.name["name-EUen"]}</p>
-                  <img
-                    className="icon"
-                    alt={villager.name["name-EUen"]}
-                    src={villager.icon_uri}
-                  />
+                  <Link className="link" to={`/villagers/${villager.id}`}>
+                    <p>{villager.name["name-EUen"]}</p>
+                    <img
+                      className="icon"
+                      alt={villager.name["name-EUen"]}
+                      src={villager.icon_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

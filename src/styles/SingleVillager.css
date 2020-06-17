@@ -1,0 +1,10 @@
+.singleVillagerBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleVillager {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

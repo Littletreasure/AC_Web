@@ -1,8 +1,32 @@
 .crittersBody {
   display: flex;
   flex-direction: column;
-  align-items: center;
-
+  align-items: stretch;
+  text-align: center;
   min-height: 100vh;
-  padding: 10px;
+}
+.critters {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  background-color: yellow;
+}
+
+.fish {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: red;
+  width: 50%;
+  padding: 20px;
+  font-size: 20px;
+}
+.insects {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: blue;
+  width: 50%;
+  padding: 20px;
+  font-size: 20px;
 }
