@@ -19,9 +19,12 @@
   box-shadow: 5px 5px 5px rgb(112, 106, 53);
   border-radius: 10px;
   margin: 5px;
+  width: 150px;
+  height: 168px;
 }
 .art p {
   margin: 0;
+  text-align: center;
 }
 .loading {
   font-size: 20px;

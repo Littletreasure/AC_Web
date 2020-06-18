@@ -8,3 +8,7 @@
   flex-direction: column;
   align-items: center;
 }
+.villagerName {
+  font-size: 30px;
+  font-weight: bold;
+}

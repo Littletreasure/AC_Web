@@ -1,7 +1,8 @@
 .villagersBody {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
+  text-align: center;
   min-height: 100vh;
 }
 .villagers {
@@ -32,4 +33,10 @@
 }
 .link {
   text-decoration: none;
+}
+.villagerSort {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
 }

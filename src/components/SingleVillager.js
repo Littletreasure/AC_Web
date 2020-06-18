@@ -26,7 +26,7 @@ class SingleVillager extends Component {
           <p className="loading">Loading ...</p>
         ) : (
           <div className="singleVillager">
-            <p>{name}</p>
+            <p className="villagerName">{name}</p>
             <img className="villImage" alt={name} src={villager.image_uri} />
             <p>Species: {villager.species}</p>
             <p>Personality: {villager.personality}</p>

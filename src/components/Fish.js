@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "../styles/Fish.css";
 import * as api from "../utils/api";
+// import capitalise from "../utils/functions";
+const { capitalise } = require("../utils/functions");
 
 class Fish extends Component {
   state = {
@@ -24,7 +26,7 @@ class Fish extends Component {
             {fish.map((fish) => {
               return (
                 <div className="fishSingle" key={fish.id}>
-                  <p>{fish.name["name-EUen"]}</p>
+                  <p>{capitalise(fish.name["name-EUen"])}</p>
                   <img
                     className="icon"
                     alt={fish.name["name-EUen"]}

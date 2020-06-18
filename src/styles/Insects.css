@@ -23,9 +23,12 @@
   box-shadow: 5px 5px 5px rgb(71, 38, 68);
   border-radius: 10px;
   margin: 5px;
+  width: 128px;
+  height: 154px;
 }
 .insect p {
   margin: 0;
+  font-size: small;
 }
 .loading {
   font-size: 20px;
