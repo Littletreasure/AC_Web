@@ -36,7 +36,7 @@ function villagerSort(props) {
         <label>
           Filter by personality:
           <select name="filter" id="filter" onChange={props.handleChange}>
-            <option value="">all</option>
+            <option value="all">all</option>
             <option value="Uchi">Big Sister</option>
             <option value="Cranky">Cranky</option>
             <option value="Jock">Jock</option>

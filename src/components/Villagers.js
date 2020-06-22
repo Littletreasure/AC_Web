@@ -9,9 +9,9 @@ class Villagers extends Component {
   state = {
     villagers: [],
     isLoading: true,
-    sort_by: "species",
+    sort_by: "",
     order: "",
-    species: "",
+    filter: "",
   };
 
   componentDidMount() {
@@ -21,22 +21,27 @@ class Villagers extends Component {
   }
 
   componentDidUpdate(prevProps, prevState) {
-    const { sort_by, order, villagers } = this.state;
+    const { sort_by, order, filter, villagers } = this.state;
     const changesort = prevState.sort_by !== sort_by;
     const changeorder = prevState.order !== order;
+    const changefilter = prevState.filter !== filter;
     if (changesort || changeorder) {
-      const newVillagers = sortBy(sort_by, order, villagers);
-      this.setState({ villagers: newVillagers });
+      this.setState({ villagers: sortBy(sort_by, order, villagers) });
+    } else if (changefilter) {
+      api.getVillagers().then((villagers) =>
+        this.setState({
+          villagers: sortBy(sort_by, order, filterVillager(filter, villagers)),
+        })
+      );
     }
   }
   handleChange = (event) => {
-    console.log(event.target);
     const { value, id, name } = event.target;
     if (id === "sortBy") {
       this.setState({ sort_by: value });
     } else if (name === "order") {
       this.setState({ order: value });
-    } else this.setState({ species: value });
+    } else this.setState({ filter: value });
   };
 
   render() {

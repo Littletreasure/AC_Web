@@ -33,6 +33,9 @@ const sortBy = (sort_by, order, products) => {
 };
 
 const filterVillager = (type, villagers) => {
+  if (type === "all") {
+    return villagers;
+  }
   return villagers.filter((villager) => villager.personality === type);
 };
 
