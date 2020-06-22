@@ -13,13 +13,27 @@ function dynamicSort(property, order) {
     sortOrder = -1;
   }
   return function (a, b) {
-    let result =
-      a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
-    return result * sortOrder;
+    if (property === "name") {
+      let result =
+        a.name["name-EUen"] < b.name["name-EUen"]
+          ? -1
+          : a.name["name-EUen"] > b.name["name-EUen"]
+          ? 1
+          : 0;
+      return result * sortOrder;
+    } else {
+      let result =
+        a[property] < b[property] ? -1 : a[property] > b[property] ? 1 : 0;
+      return result * sortOrder;
+    }
   };
 }
 const sortBy = (sort_by, order, products) => {
   return products.sort(dynamicSort(sort_by, order));
 };
 
-module.exports = { capitalise, sortBy };
+const filterVillager = (type, villagers) => {
+  return villagers.filter((villager) => villager.personality === type);
+};
+
+module.exports = { capitalise, sortBy, filterVillager };

@@ -3,14 +3,14 @@ import "../styles/Villagers.css";
 import * as api from "../utils/api";
 import { Link } from "@reach/router";
 import VillagerSort from "./VillagerSort";
-const { sortBy } = require("../utils/functions");
+const { sortBy, filterVillager } = require("../utils/functions");
 
 class Villagers extends Component {
   state = {
     villagers: [],
     isLoading: true,
     sort_by: "species",
-    order: "asc",
+    order: "",
     species: "",
   };
 
@@ -20,8 +20,17 @@ class Villagers extends Component {
     });
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    const { sort_by, order, villagers } = this.state;
+    const changesort = prevState.sort_by !== sort_by;
+    const changeorder = prevState.order !== order;
+    if (changesort || changeorder) {
+      const newVillagers = sortBy(sort_by, order, villagers);
+      this.setState({ villagers: newVillagers });
+    }
+  }
   handleChange = (event) => {
-    console.log(event.target.value);
+    console.log(event.target);
     const { value, id, name } = event.target;
     if (id === "sortBy") {
       this.setState({ sort_by: value });

@@ -7,8 +7,9 @@ function villagerSort(props) {
         <label>
           Sort by:
           <select name="sortBy" id="sortBy" onChange={props.handleChange}>
-            <option value="species">Species</option>
+            <option value=""></option>
             <option value="name">Name</option>
+            <option value="species">Species</option>
           </select>
         </label>
 
