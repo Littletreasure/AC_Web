@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Art.css";
 import * as api from "../utils/api";
-// import capitalise from "../utils/functions";
 const { capitalise } = require("../utils/functions");
 
 class Art extends Component {
@@ -11,7 +10,7 @@ class Art extends Component {
   };
 
   componentDidMount() {
-    api.getArt().then((art) => {
+    api.getInfo("art").then((art) => {
       this.setState({ art, isLoading: false });
     });
   }

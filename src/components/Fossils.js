@@ -11,7 +11,7 @@ class Fossils extends Component {
   };
 
   componentDidMount() {
-    api.getFossils().then((fossils) => {
+    api.getInfo("fossils").then((fossils) => {
       this.setState({ fossils, isLoading: false });
     });
   }

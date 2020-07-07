@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../styles/Critters.css";
 import Fish from "./Fish";
 import Insects from "./Insects";
+import SeaCreatures from "./SeaCreatures";
 
 class Critters extends Component {
   state = {
@@ -11,8 +12,10 @@ class Critters extends Component {
     console.log(event.target.id);
     if (event.target.id === "fish") {
       this.setState({ clicked: "fish" });
-    } else {
+    } else if (event.target.id === "insects") {
       this.setState({ clicked: "insects" });
+    } else {
+      this.setState({ clicked: "creatures" });
     }
   };
   render() {
@@ -27,8 +30,17 @@ class Critters extends Component {
           <div id="insects" className="insects" onClick={this.onClick}>
             Insects
           </div>
+          <div id="creatures" className="creatures" onClick={this.onClick}>
+            Sea Creatures
+          </div>
         </div>
-        {clicked === "fish" ? <Fish /> : <Insects />}
+        {clicked === "fish" ? (
+          <Fish />
+        ) : clicked === "insects" ? (
+          <Insects />
+        ) : (
+          <SeaCreatures />
+        )}
       </div>
     );
   }

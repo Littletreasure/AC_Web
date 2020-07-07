@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import "../styles/Fish.css";
 import * as api from "../utils/api";
-// import capitalise from "../utils/functions";
 const { capitalise } = require("../utils/functions");
 
 class Fish extends Component {
@@ -11,7 +10,7 @@ class Fish extends Component {
   };
 
   componentDidMount() {
-    api.getFish().then((fish) => {
+    api.getInfo("fish").then((fish) => {
       this.setState({ fish, isLoading: false });
     });
   }

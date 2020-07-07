@@ -11,7 +11,7 @@ class Insects extends Component {
   };
 
   componentDidMount() {
-    api.getInsects().then((insects) => {
+    api.getInfo("bugs").then((insects) => {
       this.setState({ insects, isLoading: false });
     });
   }

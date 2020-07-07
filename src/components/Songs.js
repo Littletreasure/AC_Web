@@ -9,7 +9,7 @@ class Songs extends Component {
   };
 
   componentDidMount() {
-    api.getSongs().then((songs) => {
+    api.getInfo("songs").then((songs) => {
       this.setState({ songs, isLoading: false });
     });
   }

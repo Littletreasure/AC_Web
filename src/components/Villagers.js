@@ -15,7 +15,7 @@ class Villagers extends Component {
   };
 
   componentDidMount() {
-    api.getVillagers().then((villagers) => {
+    api.getInfo("villagers").then((villagers) => {
       this.setState({ villagers, isLoading: false });
     });
   }
@@ -28,7 +28,7 @@ class Villagers extends Component {
     if (changesort || changeorder) {
       this.setState({ villagers: sortBy(sort_by, order, villagers) });
     } else if (changefilter) {
-      api.getVillagers().then((villagers) =>
+      api.getInfo("villagers").then((villagers) =>
         this.setState({
           villagers: sortBy(sort_by, order, filterVillager(filter, villagers)),
         })
