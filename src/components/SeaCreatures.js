@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/SeaCreatures.css";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 const { capitalise } = require("../utils/functions");
 
 class SeaCreatures extends Component {
@@ -25,12 +26,14 @@ class SeaCreatures extends Component {
             {creatures.map((creature) => {
               return (
                 <div className="creature" key={creature.id}>
-                  <p>{capitalise(creature.name["name-EUen"])}</p>
-                  <img
-                    className="icon"
-                    alt={creature.name["name-EUen"]}
-                    src={creature.icon_uri}
-                  />
+                  <Link className="link" to={`/creatures/${creature.id}`}>
+                    <p>{capitalise(creature.name["name-EUen"])}</p>
+                    <img
+                      className="icon"
+                      alt={creature.name["name-EUen"]}
+                      src={creature.icon_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

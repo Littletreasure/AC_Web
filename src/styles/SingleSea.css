@@ -1,19 +1,19 @@
-.singleFishBody {
+.singleCreatureBody {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.singleFish {
+.singleCreature {
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-left: 20px;
   padding-right: 20px;
 }
-.fishName {
+.creatureName {
   font-size: 30px;
   font-weight: bold;
 }
-.fishImage {
-  width: 500px;
+.creatureImage {
+  height: 250px;
 }

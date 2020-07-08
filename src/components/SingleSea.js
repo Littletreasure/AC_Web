@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "../styles/SingleFish.css";
+import "../styles/SingleSea.css";
 import * as api from "../utils/api";
 const { capitalise, monthConverter } = require("../utils/functions");
 
-class SingleFish extends Component {
+class SingleSea extends Component {
   state = {
-    fish: [],
+    creature: [],
     name: null,
     allYear: false,
     monthsNorth: "",
@@ -15,29 +15,29 @@ class SingleFish extends Component {
   };
 
   componentDidMount() {
-    api.getInfoById("fish", this.props.fish_id).then((fish) => {
+    api.getInfoById("sea", this.props.creature_id).then((creature) => {
       let monthsNorth;
       let monthsSouth;
       let hours;
       let allYear = false;
-      if (fish.availability.isAllYear === true) {
+      if (creature.availability.isAllYear === true) {
         allYear = true;
       } else {
         monthsNorth = monthConverter(
-          fish.availability["month-array-northern"]
+          creature.availability["month-array-northern"]
         ).join(", ");
         monthsSouth = monthConverter(
-          fish.availability["month-array-southern"]
+          creature.availability["month-array-southern"]
         ).join(", ");
       }
-      if (fish.availability.isAllDay === true) {
+      if (creature.availability.isAllDay === true) {
         hours = "All Day";
       } else {
-        hours = fish.availability["time-array"].join(", ");
+        hours = creature.availability["time-array"].join(", ");
       }
       this.setState({
-        fish,
-        name: fish.name["name-EUen"],
+        creature,
+        name: creature.name["name-EUen"],
         allYear: allYear,
         monthsNorth: monthsNorth,
         monthsSouth: monthsSouth,
@@ -48,7 +48,7 @@ class SingleFish extends Component {
   }
   render() {
     const {
-      fish,
+      creature,
       name,
       allYear,
       monthsNorth,
@@ -57,13 +57,17 @@ class SingleFish extends Component {
       isLoading,
     } = this.state;
     return (
-      <div className="singleFishBody">
+      <div className="singleCreatureBody">
         {isLoading ? (
           <p className="loading">Loading ...</p>
         ) : (
-          <div className="singleFish">
-            <p className="fishName">{capitalise(name)}</p>
-            <img className="fishImage" alt={name} src={fish.image_uri} />
+          <div className="singleCreature">
+            <p className="creatureName">{capitalise(name)}</p>
+            <img
+              className="creatureImage"
+              alt={name}
+              src={creature.image_uri}
+            />
 
             <p>Months available:</p>
 
@@ -77,12 +81,12 @@ class SingleFish extends Component {
             )}
 
             <p>Hours available: {hours}</p>
-            <p>Location: {fish.availability.location}</p>
-            <p>Rarity: {fish.availability.rarity}</p>
-            <p>Shadow size: {fish.shadow}</p>
-            <p>Selling price: {fish.price}</p>
-            <p>Catchphrase: {fish["catch-phrase"]}</p>
-            <p>Museum phrase: {fish["museum-phrase"]}</p>
+            <p>Location: {creature.availability.location}</p>
+            <p>Shadow size: {creature.shadow}</p>
+            <p>Speed: {creature.speed}</p>
+            <p>Selling price: {creature.price}</p>
+            <p>Catchphrase: {creature["catch-phrase"]}</p>
+            <p>Museum phrase: {creature["museum-phrase"]}</p>
           </div>
         )}
       </div>
@@ -90,4 +94,4 @@ class SingleFish extends Component {
   }
 }
 
-export default SingleFish;
+export default SingleSea;

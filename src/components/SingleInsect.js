@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import "../styles/SingleFish.css";
+import "../styles/SingleInsect.css";
 import * as api from "../utils/api";
 const { capitalise, monthConverter } = require("../utils/functions");
 
-class SingleFish extends Component {
+class SingleInsect extends Component {
   state = {
-    fish: [],
+    insect: [],
     name: null,
     allYear: false,
     monthsNorth: "",
@@ -15,29 +15,29 @@ class SingleFish extends Component {
   };
 
   componentDidMount() {
-    api.getInfoById("fish", this.props.fish_id).then((fish) => {
+    api.getInfoById("bugs", this.props.insect_id).then((insect) => {
       let monthsNorth;
       let monthsSouth;
       let hours;
       let allYear = false;
-      if (fish.availability.isAllYear === true) {
+      if (insect.availability.isAllYear === true) {
         allYear = true;
       } else {
         monthsNorth = monthConverter(
-          fish.availability["month-array-northern"]
+          insect.availability["month-array-northern"]
         ).join(", ");
         monthsSouth = monthConverter(
-          fish.availability["month-array-southern"]
+          insect.availability["month-array-southern"]
         ).join(", ");
       }
-      if (fish.availability.isAllDay === true) {
+      if (insect.availability.isAllDay === true) {
         hours = "All Day";
       } else {
-        hours = fish.availability["time-array"].join(", ");
+        hours = insect.availability["time-array"].join(", ");
       }
       this.setState({
-        fish,
-        name: fish.name["name-EUen"],
+        insect,
+        name: insect.name["name-EUen"],
         allYear: allYear,
         monthsNorth: monthsNorth,
         monthsSouth: monthsSouth,
@@ -48,7 +48,7 @@ class SingleFish extends Component {
   }
   render() {
     const {
-      fish,
+      insect,
       name,
       allYear,
       monthsNorth,
@@ -57,13 +57,13 @@ class SingleFish extends Component {
       isLoading,
     } = this.state;
     return (
-      <div className="singleFishBody">
+      <div className="singleInsectBody">
         {isLoading ? (
           <p className="loading">Loading ...</p>
         ) : (
-          <div className="singleFish">
-            <p className="fishName">{capitalise(name)}</p>
-            <img className="fishImage" alt={name} src={fish.image_uri} />
+          <div className="singleInsect">
+            <p className="insectName">{capitalise(name)}</p>
+            <img className="insectImage" alt={name} src={insect.image_uri} />
 
             <p>Months available:</p>
 
@@ -77,12 +77,11 @@ class SingleFish extends Component {
             )}
 
             <p>Hours available: {hours}</p>
-            <p>Location: {fish.availability.location}</p>
-            <p>Rarity: {fish.availability.rarity}</p>
-            <p>Shadow size: {fish.shadow}</p>
-            <p>Selling price: {fish.price}</p>
-            <p>Catchphrase: {fish["catch-phrase"]}</p>
-            <p>Museum phrase: {fish["museum-phrase"]}</p>
+            <p>Location: {insect.availability.location}</p>
+            <p>Rarity: {insect.availability.rarity}</p>
+            <p>Selling price: {insect.price}</p>
+            <p>Catchphrase: {insect["catch-phrase"]}</p>
+            <p>Museum phrase: {insect["museum-phrase"]}</p>
           </div>
         )}
       </div>
@@ -90,4 +89,4 @@ class SingleFish extends Component {
   }
 }
 
-export default SingleFish;
+export default SingleInsect;

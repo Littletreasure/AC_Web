@@ -11,6 +11,8 @@ import Songs from "./components/Songs";
 import Items from "./components/Items";
 import SingleVillager from "./components/SingleVillager";
 import SingleFish from "./components/SingleFish";
+import SingleInsect from "./components/SingleInsect";
+import SingleSea from "./components/SingleSea";
 
 import "./styles/App.css";
 
@@ -31,6 +33,8 @@ function App() {
             <Items path="/items" />
             <SingleVillager path="/villagers/:villager_id" />
             <SingleFish path="/fish/:fish_id" />
+            <SingleInsect path="/insects/:insect_id" />
+            <SingleSea path="/creatures/:creature_id" />
           </Router>
         </div>
       </div>
