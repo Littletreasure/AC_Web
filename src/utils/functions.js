@@ -39,4 +39,26 @@ const filterVillager = (type, villagers) => {
   return villagers.filter((villager) => villager.personality === type);
 };
 
-module.exports = { capitalise, sortBy, filterVillager };
+const monthConverter = (array) => {
+  const monthArray = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  const newArray = [];
+  array.forEach((num) => {
+    newArray.push(monthArray[num - 1]);
+  });
+  return newArray;
+};
+
+module.exports = { capitalise, sortBy, filterVillager, monthConverter };

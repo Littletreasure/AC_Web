@@ -10,6 +10,7 @@ import Art from "./components/Art";
 import Songs from "./components/Songs";
 import Items from "./components/Items";
 import SingleVillager from "./components/SingleVillager";
+import SingleFish from "./components/SingleFish";
 
 import "./styles/App.css";
 
@@ -29,6 +30,7 @@ function App() {
             <Songs path="/songs" />
             <Items path="/items" />
             <SingleVillager path="/villagers/:villager_id" />
+            <SingleFish path="/fish/:fish_id" />
           </Router>
         </div>
       </div>

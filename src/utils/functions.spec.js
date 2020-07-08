@@ -1,4 +1,9 @@
-const { capitalise, sortBy, filterVillager } = require("./functions");
+const {
+  capitalise,
+  sortBy,
+  filterVillager,
+  monthConverter,
+} = require("./functions");
 
 describe("capitalise", () => {
   it('returns "Perfect Painting" when passed "perfect painting"', () => {
@@ -134,6 +139,18 @@ describe("filterVillager", () => {
       { id: 1, name: "Pango", species: "Anteater", personality: "Cranky" },
       { id: 4, name: "Daisy", species: "Dog", personality: "Cranky" },
     ];
+    expect(actual).toStrictEqual(expected);
+  });
+});
+
+describe("monthConverter", () => {
+  it("returns an array", () => {
+    const actual = monthConverter([1, 2, 3]);
+    expect(actual).toBeInstanceOf(Array);
+  });
+  it('returns an array containing ["Jan", "Feb", "Mar"] when passed [1, 2, 2]', () => {
+    const actual = monthConverter([1, 2, 3]);
+    const expected = ["Jan", "Feb", "Mar"];
     expect(actual).toStrictEqual(expected);
   });
 });

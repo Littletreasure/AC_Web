@@ -10,7 +10,7 @@ class SingleVillager extends Component {
   };
 
   componentDidMount() {
-    api.getVillagerById(this.props.villager_id).then((villager) => {
+    api.getInfoById("villagers", this.props.villager_id).then((villager) => {
       this.setState({
         villager,
         name: villager.name["name-EUen"],
