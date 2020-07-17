@@ -5,6 +5,7 @@
   width: 20%;
   background-color: #ffd11a;
   padding: 10px;
+  padding-top: 20px;
 }
 .link {
   text-decoration: none;
@@ -15,5 +16,8 @@
 }
 .homebutton {
   padding-top: 30px;
-  width: 25px;
+  width: 35px;
+}
+.navicon {
+  width: 80px;
 }

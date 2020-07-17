@@ -1,0 +1,19 @@
+.singleFossilBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleFossil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.fossilName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.fossilImage {
+  width: 150px;
+}

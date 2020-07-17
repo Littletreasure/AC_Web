@@ -19,9 +19,12 @@
   box-shadow: 5px 5px 5px rgb(71, 46, 38);
   border-radius: 10px;
   margin: 5px;
+  width: 150px;
 }
 .fossil p {
   margin: 0;
+  text-align: center;
+  font-size: smaller;
 }
 .loading {
   font-size: 20px;

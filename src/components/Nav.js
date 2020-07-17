@@ -2,12 +2,21 @@ import React, { Component } from "react";
 import { Link } from "@reach/router";
 import "../styles/Nav.css";
 import homebutton from "../home.png";
+import * as api from "../utils/api";
 
 class Nav extends Component {
-  state = {};
+  state = { icon: "" };
+
+  componentDidMount() {
+    api.getPic().then((data) => {
+      this.setState({ icon: data });
+    });
+  }
   render() {
+    const { icon } = this.state;
     return (
       <div className="navList">
+        <img className="navicon" alt="villager" src={icon} />
         <div key="vill">
           <Link className="link" to="/villagers">
             <h3>Villagers</h3>

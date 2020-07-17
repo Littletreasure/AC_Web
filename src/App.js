@@ -13,13 +13,14 @@ import SingleVillager from "./components/SingleVillager";
 import SingleFish from "./components/SingleFish";
 import SingleInsect from "./components/SingleInsect";
 import SingleSea from "./components/SingleSea";
+import SingleFossil from "./components/SingleFossil";
 
 import "./styles/App.css";
 
 function App() {
   return (
     <div className="app">
-      <Header />
+      {/* <Header /> */}
       <div className="body">
         <Nav />
         <div className="content">
@@ -35,6 +36,7 @@ function App() {
             <SingleFish path="/fish/:fish_id" />
             <SingleInsect path="/insects/:insect_id" />
             <SingleSea path="/creatures/:creature_id" />
+            <SingleFossil path="/fossils/:filename" />
           </Router>
         </div>
       </div>

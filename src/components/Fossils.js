@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Fossils.css";
 import * as api from "../utils/api";
-// import { capitalise } from "../utils/functions";
+import { Link } from "@reach/router";
 const { capitalise } = require("../utils/functions");
 
 class Fossils extends Component {
@@ -27,12 +27,14 @@ class Fossils extends Component {
             {fossils.map((fossil) => {
               return (
                 <div className="fossil" key={fossil["file-name"]}>
-                  <p>{capitalise(fossil.name["name-EUen"])}</p>
-                  <img
-                    className="image"
-                    alt={fossil.name["name-EUen"]}
-                    src={fossil.image_uri}
-                  />
+                  <Link className="link" to={`/fossils/${fossil["file-name"]}`}>
+                    <p>{capitalise(fossil.name["name-EUen"])}</p>
+                    <img
+                      className="image"
+                      alt={fossil.name["name-EUen"]}
+                      src={fossil.image_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}
