@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Art.css";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 const { capitalise } = require("../utils/functions");
 
 class Art extends Component {
@@ -27,12 +28,14 @@ class Art extends Component {
             {art.map((art) => {
               return (
                 <div className="artsingle" key={art["file-name"]}>
-                  <p>{capitalise(art.name["name-EUen"])}</p>
-                  <img
-                    className="image"
-                    alt={art.name["name-EUen"]}
-                    src={art.image_uri}
-                  />
+                  <Link className="link" to={`/art/${art.id}`}>
+                    <p>{capitalise(art.name["name-EUen"])}</p>
+                    <img
+                      className="image"
+                      alt={art.name["name-EUen"]}
+                      src={art.image_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Songs.css";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 
 class Songs extends Component {
   state = {
@@ -25,12 +26,14 @@ class Songs extends Component {
             {songs.map((song) => {
               return (
                 <div className="song" key={song.id}>
-                  <p>{song.name["name-EUen"]}</p>
-                  <img
-                    className="image"
-                    alt={song.name["name-EUen"]}
-                    src={song.image_uri}
-                  />
+                  <Link className="link" to={`/songs/${song.id}`}>
+                    <p>{song.name["name-EUen"]}</p>
+                    <img
+                      className="image"
+                      alt={song.name["name-EUen"]}
+                      src={song.image_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

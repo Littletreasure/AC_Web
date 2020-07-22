@@ -23,6 +23,8 @@
 .song p {
   margin: 0;
   padding-bottom: 10px;
+  text-align: center;
+  font-size: smaller;
 }
 .image {
   width: 150px;

@@ -1,6 +1,5 @@
 import React from "react";
 import { Router } from "@reach/router";
-import Header from "./components/Header";
 import Nav from "./components/Nav";
 import Home from "./components/Home";
 import Villagers from "./components/Villagers";
@@ -14,13 +13,14 @@ import SingleFish from "./components/SingleFish";
 import SingleInsect from "./components/SingleInsect";
 import SingleSea from "./components/SingleSea";
 import SingleFossil from "./components/SingleFossil";
+import SingleArt from "./components/SingleArt";
+import SingleSong from "./components/SingleSong";
 
 import "./styles/App.css";
 
 function App() {
   return (
     <div className="app">
-      {/* <Header /> */}
       <div className="body">
         <Nav />
         <div className="content">
@@ -37,6 +37,8 @@ function App() {
             <SingleInsect path="/insects/:insect_id" />
             <SingleSea path="/creatures/:creature_id" />
             <SingleFossil path="/fossils/:filename" />
+            <SingleArt path="/art/:art_id" />
+            <SingleSong path="/songs/:song_id" />
           </Router>
         </div>
       </div>

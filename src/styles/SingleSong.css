@@ -1,0 +1,19 @@
+.singleSongBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleSong {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.songName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.songImage {
+  width: 180px;
+}
