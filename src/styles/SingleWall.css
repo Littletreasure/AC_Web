@@ -1,0 +1,32 @@
+.singleWallBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleWall {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.wallName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.wallImage {
+  height: 120px;
+}
+.wallVariants {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.wallVariant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}

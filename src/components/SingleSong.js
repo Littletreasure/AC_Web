@@ -30,7 +30,7 @@ class SingleSong extends Component {
           <div className="singleSong">
             <p className="songName">{name}</p>
             <img className="songImage" alt={name} src={song.image_uri} />
-            <p>Selling price: {song["sell-price"]}</p>
+            <p>Selling price: {song["sell-price"]} bells</p>
             <p>
               <audio controls ref="media" src={`${music}`}></audio>
             </p>

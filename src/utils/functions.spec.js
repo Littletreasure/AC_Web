@@ -3,6 +3,7 @@ const {
   sortBy,
   filterVillager,
   monthConverter,
+  itemSort,
 } = require("./functions");
 
 describe("capitalise", () => {
@@ -151,6 +152,14 @@ describe("monthConverter", () => {
   it('returns an array containing ["Jan", "Feb", "Mar"] when passed [1, 2, 2]', () => {
     const actual = monthConverter([1, 2, 3]);
     const expected = ["Jan", "Feb", "Mar"];
+    expect(actual).toStrictEqual(expected);
+  });
+});
+
+describe("itemSort", () => {
+  it("sorts a list of items alphabetically ignoring case", () => {
+    const actual = itemSort(["alpha", "Bunny", "dog", "Cat"]);
+    const expected = ["alpha", "Bunny", "Cat", "dog"];
     expect(actual).toStrictEqual(expected);
   });
 });

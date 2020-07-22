@@ -65,12 +65,11 @@ class SingleFish extends Component {
             <p className="fishName">{capitalise(name)}</p>
             <img className="fishImage" alt={name} src={fish.image_uri} />
 
-            <p>Months available:</p>
-
             {allYear ? (
-              <p>All Year</p>
+              <p>Months available: All Year</p>
             ) : (
               <>
+                <p>Months available:</p>
                 <p>Northern Hemisphere: {monthsNorth}</p>
                 <p>Southern Hemisphere: {monthsSouth}</p>
               </>
@@ -80,7 +79,7 @@ class SingleFish extends Component {
             <p>Location: {fish.availability.location}</p>
             <p>Rarity: {fish.availability.rarity}</p>
             <p>Shadow size: {fish.shadow}</p>
-            <p>Selling price: {fish.price}</p>
+            <p>Selling price: {fish.price} bells</p>
             <p>Catchphrase: {fish["catch-phrase"]}</p>
             <p>Museum phrase: {fish["museum-phrase"]}</p>
           </div>

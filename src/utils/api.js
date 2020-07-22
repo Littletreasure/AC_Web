@@ -20,3 +20,9 @@ export const getInfoById = (type, id) => {
     return response.data;
   });
 };
+
+export const getItem = (type) => {
+  return axios.get(`http://acnhapi.com/v1/${type}/`).then((response) => {
+    return response.data;
+  });
+};

@@ -69,12 +69,11 @@ class SingleSea extends Component {
               src={creature.image_uri}
             />
 
-            <p>Months available:</p>
-
             {allYear ? (
-              <p>All Year</p>
+              <p>Months available: All Year</p>
             ) : (
               <>
+                <p>Months available:</p>
                 <p>Northern Hemisphere: {monthsNorth}</p>
                 <p>Southern Hemisphere: {monthsSouth}</p>
               </>
@@ -84,7 +83,7 @@ class SingleSea extends Component {
             <p>Location: {creature.availability.location}</p>
             <p>Shadow size: {creature.shadow}</p>
             <p>Speed: {creature.speed}</p>
-            <p>Selling price: {creature.price}</p>
+            <p>Selling price: {creature.price} bells</p>
             <p>Catchphrase: {creature["catch-phrase"]}</p>
             <p>Museum phrase: {creature["museum-phrase"]}</p>
           </div>

@@ -29,7 +29,7 @@ class SingleArt extends Component {
           <div className="singleArt">
             <p className="artName">{capitalise(name)}</p>
             <img className="artImage" alt={name} src={art.image_uri} />
-            <p>Selling price: {art["sell-price"]}</p>
+            <p>Selling price: {art["sell-price"]} bells</p>
             {art.hasFake ? <p>Has fake?: Yes</p> : <p>Has fake?: No</p>}
           </div>
         )}

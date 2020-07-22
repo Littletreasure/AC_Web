@@ -9,7 +9,6 @@ class Items extends Component {
     clicked: "house",
   };
   onClick = (event) => {
-    console.log(event.target.id);
     if (event.target.id === "house") {
       this.setState({ clicked: "house" });
     } else if (event.target.id === "misc") {

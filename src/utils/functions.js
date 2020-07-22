@@ -61,4 +61,17 @@ const monthConverter = (array) => {
   return newArray;
 };
 
-module.exports = { capitalise, sortBy, filterVillager, monthConverter };
+const itemSort = (array) => {
+  const newArray = array.sort(function (a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase());
+  });
+  return newArray;
+};
+
+module.exports = {
+  capitalise,
+  sortBy,
+  filterVillager,
+  monthConverter,
+  itemSort,
+};

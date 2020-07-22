@@ -1,0 +1,32 @@
+.singleHouseBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleHouse {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.houseName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.houseImage {
+  height: 120px;
+}
+.houseVariants {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.houseVariant {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}

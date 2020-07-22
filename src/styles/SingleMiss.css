@@ -1,0 +1,19 @@
+.singleMiscBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.singleMisc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.miscName {
+  font-size: 30px;
+  font-weight: bold;
+}
+.miscImage {
+  height: 250px;
+}

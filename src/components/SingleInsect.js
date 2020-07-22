@@ -65,12 +65,11 @@ class SingleInsect extends Component {
             <p className="insectName">{capitalise(name)}</p>
             <img className="insectImage" alt={name} src={insect.image_uri} />
 
-            <p>Months available:</p>
-
             {allYear ? (
-              <p>All Year</p>
+              <p>Months available: All Year</p>
             ) : (
               <>
+                <p>Months available:</p>
                 <p>Northern Hemisphere: {monthsNorth}</p>
                 <p>Southern Hemisphere: {monthsSouth}</p>
               </>
@@ -79,7 +78,7 @@ class SingleInsect extends Component {
             <p>Hours available: {hours}</p>
             <p>Location: {insect.availability.location}</p>
             <p>Rarity: {insect.availability.rarity}</p>
-            <p>Selling price: {insect.price}</p>
+            <p>Selling price: {insect.price} bells</p>
             <p>Catchphrase: {insect["catch-phrase"]}</p>
             <p>Museum phrase: {insect["museum-phrase"]}</p>
           </div>

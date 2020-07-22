@@ -15,7 +15,8 @@ import SingleSea from "./components/SingleSea";
 import SingleFossil from "./components/SingleFossil";
 import SingleArt from "./components/SingleArt";
 import SingleSong from "./components/SingleSong";
-
+import SingleWallMounted from "./components/SingleWallmount";
+import SingleHouseware from "./components/SingleHouseware";
 import "./styles/App.css";
 
 function App() {
@@ -39,6 +40,8 @@ function App() {
             <SingleFossil path="/fossils/:filename" />
             <SingleArt path="/art/:art_id" />
             <SingleSong path="/songs/:song_id" />
+            <SingleWallMounted path="/wallmounted/:name" />
+            <SingleHouseware path="/houseware/:name" />
           </Router>
         </div>
       </div>

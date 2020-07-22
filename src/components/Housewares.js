@@ -1,36 +1,48 @@
 import React, { Component } from "react";
 import "../styles/Housewares.css";
 import * as api from "../utils/api";
-const { capitalise } = require("../utils/functions");
+import { Link } from "@reach/router";
+const { capitalise, itemSort } = require("../utils/functions");
 
 class Housewares extends Component {
   state = {
     house: [],
+    name: [],
     isLoading: true,
   };
 
   componentDidMount() {
-    api.getInfo("houseware").then((house) => {
-      this.setState({ house, isLoading: false });
+    api.getItem("houseware").then((house) => {
+      const name = itemSort(Object.keys(house));
+      this.setState({
+        house,
+        name,
+        isLoading: false,
+      });
     });
   }
   render() {
-    const { house, isLoading } = this.state;
+    const { house, name, isLoading } = this.state;
     return (
       <div className="houseBody">
         {isLoading ? (
           <p className="loading">Loading ...</p>
         ) : (
           <div className="house1">
-            {house.map((house) => {
+            {name.map((item) => {
               return (
-                <div className="houseSingle" key={house[0].id}>
-                  <p>{capitalise(house[0].name["name-EUen"])}</p>
-                  <img
-                    className="icon"
-                    alt={house[0].name["name-EUen"]}
-                    src={house[0].image_uri}
-                  />
+                <div
+                  className="houseSingle"
+                  key={house[item][0]["internal-id"]}
+                >
+                  <Link className="link" to={`/houseware/${item}`}>
+                    <p>{capitalise(house[item][0].name["name-EUen"])}</p>
+                    <img
+                      className="icon"
+                      alt={house[item][0].name["name-EUen"]}
+                      src={house[item][0].image_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

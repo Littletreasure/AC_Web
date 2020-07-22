@@ -29,7 +29,7 @@ class SingleFossil extends Component {
           <div className="singleFossil">
             <p className="fossilName">{capitalise(name)}</p>
             <img className="fossilImage" alt={name} src={fossil.image_uri} />
-            <p>Selling price: {fossil.price}</p>
+            <p>Selling price: {fossil.price} bells</p>
             <p>Museum phrase: {fossil["museum-phrase"]}</p>
           </div>
         )}
