@@ -27,7 +27,13 @@ class SingleHouseware extends Component {
           <p className="loading">Loading ...</p>
         ) : (
           <div className="singleHouse">
-            <p className="houseName">{capitalise(name)}</p>
+            {name === "study chair" ? (
+              <p className="wallName">Writing Chair</p>
+            ) : name === "study desk" ? (
+              <p className="wallName">Writing Desk</p>
+            ) : (
+              <p className="houseName">{capitalise(name)}</p>
+            )}
             <div className="houseVariants">
               {house.map((variant) => {
                 return (

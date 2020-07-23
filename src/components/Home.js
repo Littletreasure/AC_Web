@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../ac_logo.png";
+import logo from "../acnh_logo.png";
 
 import "../styles/Home.css";
 

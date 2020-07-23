@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../styles/Misc.css";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 const { capitalise } = require("../utils/functions");
 
 class Misc extends Component {
@@ -26,12 +27,14 @@ class Misc extends Component {
             {name.map((item) => {
               return (
                 <div className="miscSingle" key={misc[item][0]["internal-id"]}>
-                  <p>{capitalise(misc[item][0].name["name-EUen"])}</p>
-                  <img
-                    className="icon"
-                    alt={misc[item][0].name["name-EUen"]}
-                    src={misc[item][0].image_uri}
-                  />
+                  <Link className="link" to={`/misc/${item}`}>
+                    <p>{capitalise(misc[item][0].name["name-EUen"])}</p>
+                    <img
+                      className="icon"
+                      alt={misc[item][0].name["name-EUen"]}
+                      src={misc[item][0].image_uri}
+                    />
+                  </Link>
                 </div>
               );
             })}

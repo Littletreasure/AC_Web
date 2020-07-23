@@ -5,7 +5,7 @@
   width: 20%;
   background-color: #ffd11a;
   padding: 10px;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 .link {
   text-decoration: none;
@@ -14,10 +14,15 @@
   margin-block: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-.homebutton {
+/* .homebutton {
   padding-top: 30px;
   width: 35px;
-}
+} */
 .navicon {
   width: 80px;
+  padding-top: 20px;
+}
+.navLogo {
+  width: 150px;
+  padding: 20px;
 }

@@ -14,7 +14,7 @@ class SingleMisc extends Component {
     api.getInfoById("misc", this.props.name).then((misc) => {
       this.setState({
         misc,
-        name: misc.name["name-EUen"],
+        name: misc[0].name["name-EUen"],
         isLoading: false,
       });
     });
@@ -28,8 +28,30 @@ class SingleMisc extends Component {
         ) : (
           <div className="singleMisc">
             <p className="miscName">{capitalise(name)}</p>
-            <img className="miscImage" alt={name} src={misc.image_uri} />
-            <p>Selling price: {misc["sell-price"]}</p>
+            <div className="miscVariants">
+              {misc.map((variant) => {
+                return (
+                  <div className="miscVariant">
+                    <p>{variant.variant}</p>
+                    <img
+                      className="miscImage"
+                      alt={variant.variant}
+                      src={variant.image_uri}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            {misc[0]["buy-price"] ? (
+              <p>Buy price: {misc[0]["buy-price"]} bells</p>
+            ) : (
+              <p>Buy Price: Not for sale</p>
+            )}
+            <p>Selling price: {misc[0]["sell-price"]} bells</p>
+            <p>Source: {misc[0].source}</p>
+            {misc[0]["source-detail"] ? (
+              <p>{misc[0]["source-detail"]}</p>
+            ) : null}
           </div>
         )}
       </div>

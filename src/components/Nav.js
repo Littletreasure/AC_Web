@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import "../styles/Nav.css";
 import homebutton from "../home.png";
 import * as api from "../utils/api";
+import navLogo from "../ac_logo.png";
 
 class Nav extends Component {
   state = { icon: "" };
@@ -16,7 +17,12 @@ class Nav extends Component {
     const { icon } = this.state;
     return (
       <div className="navList">
-        <img className="navicon" alt="villager" src={icon} />
+        <div key="home">
+          <Link to="/">
+            <img className="navLogo" src={navLogo} alt="logo"></img>
+          </Link>
+        </div>
+        {/* <img className="logo" src={navLogo} alt="logo" /> */}
         <div key="vill">
           <Link className="link" to="/villagers">
             <h3>Villagers</h3>
@@ -47,11 +53,12 @@ class Nav extends Component {
             <h3>Items</h3>
           </Link>
         </div>
-        <div key="home">
+        {/* <div key="home">
           <Link to="/">
             <img className="homebutton" src={homebutton} alt="home"></img>
           </Link>
-        </div>
+        </div> */}
+        <img className="navicon" alt="villager" src={icon} />
       </div>
     );
   }

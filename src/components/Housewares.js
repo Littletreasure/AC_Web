@@ -36,7 +36,13 @@ class Housewares extends Component {
                   key={house[item][0]["internal-id"]}
                 >
                   <Link className="link" to={`/houseware/${item}`}>
-                    <p>{capitalise(house[item][0].name["name-EUen"])}</p>
+                    {house[item][0].name["name-EUen"] === "study chair" ? (
+                      <p>Writing Chair</p>
+                    ) : house[item][0].name["name-EUen"] === "study desk" ? (
+                      <p>Writing Desk</p>
+                    ) : (
+                      <p>{capitalise(house[item][0].name["name-EUen"])}</p>
+                    )}
                     <img
                       className="icon"
                       alt={house[item][0].name["name-EUen"]}

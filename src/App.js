@@ -17,6 +17,7 @@ import SingleArt from "./components/SingleArt";
 import SingleSong from "./components/SingleSong";
 import SingleWallMounted from "./components/SingleWallmount";
 import SingleHouseware from "./components/SingleHouseware";
+import SingleMisc from "./components/SingleMisc";
 import "./styles/App.css";
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
             <SingleSong path="/songs/:song_id" />
             <SingleWallMounted path="/wallmounted/:name" />
             <SingleHouseware path="/houseware/:name" />
+            <SingleMisc path="/misc/:name" />
           </Router>
         </div>
       </div>
