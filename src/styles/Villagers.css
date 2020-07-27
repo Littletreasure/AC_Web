@@ -23,7 +23,7 @@
 }
 .villager p {
   text-align: center;
-
+  font-size: smaller;
   margin: 0;
 }
 .loading {
