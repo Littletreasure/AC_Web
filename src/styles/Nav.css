@@ -1,18 +1,37 @@
-.navList {
+.nav {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 20%;
   background-color: #ffd11a;
+}
+.navList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding: 10px;
   padding-top: 10px;
+}
+@media (max-width: 767px) {
+  .nav {
+    margin-top: 0;
+    top: 0;
+    width: 100%;
+    padding: 0 0 10px 0;
+  }
+  .navList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  h3 {
+    margin: 0 10px;
+  }
 }
 .link {
   text-decoration: none;
   font-size: 18px;
-  margin: 0;
-  margin-block: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: black;
 }
 /* .homebutton {
   padding-top: 30px;
@@ -25,4 +44,9 @@
 .navLogo {
   width: 150px;
   padding: 20px;
+}
+@media (max-width: 768px) {
+  .vill-logo {
+    display: none;
+  }
 }

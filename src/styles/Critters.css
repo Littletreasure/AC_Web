@@ -20,6 +20,7 @@
   width: 33%;
   padding: 20px;
   font-size: 20px;
+  cursor: pointer;
 }
 .insects {
   display: flex;
@@ -29,6 +30,7 @@
   width: 33%;
   padding: 20px;
   font-size: 20px;
+  cursor: pointer;
 }
 
 .creatures {
@@ -39,4 +41,5 @@
   width: 34%;
   padding: 20px;
   font-size: 20px;
+  cursor: pointer;
 }

@@ -5,7 +5,7 @@ export const getPic = () => {
   return axios
     .get(`http://acnhapi.com/v1a/villagers/${num}`)
     .then((response) => {
-      return response.data.icon_uri;
+      return response.data;
     });
 };
 
