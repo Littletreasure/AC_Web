@@ -12,24 +12,26 @@
   padding: 10px;
   padding-top: 10px;
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .nav {
+    margin-top: 0;
+    top: 0;
     width: 100%;
     padding: 0 0 10px 0;
-}
-.navList {
-  flex-direction: row;
-  flex-wrap: wrap;
-}
+  }
+  .navList {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  h3 {
+    margin: 0 10px;
+  }
 }
 .link {
   text-decoration: none;
   font-size: 18px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: black;
-}
-h3 {
-  margin: 0 10px;
 }
 /* .homebutton {
   padding-top: 30px;
