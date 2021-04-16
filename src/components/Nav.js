@@ -1,28 +1,37 @@
 import React, { Component } from "react";
 import { Link } from "@reach/router";
 import "../styles/Nav.css";
-import homebutton from "../home.png";
+// import homebutton from "../home.png";
 import * as api from "../utils/api";
 import navLogo from "../ac_logo.png";
 
 class Nav extends Component {
-  state = { icon: "" };
+  state = { 
+    icon: "",
+    id: ""
+ };
 
   componentDidMount() {
     api.getPic().then((data) => {
-      this.setState({ icon: data });
+      this.setState({ icon: data.icon_uri, id: data.id });
     });
   }
+  onClick = () => {
+    api.getPic().then((data) => {
+      this.setState({ icon: data.icon_uri, id: data.id });
+    });
+  };
   render() {
-    const { icon } = this.state;
+    const { icon, id } = this.state;
     return (
-      <div className="navList">
+      <div className="nav">
         <div key="home">
           <Link to="/">
             <img className="navLogo" src={navLogo} alt="logo"></img>
           </Link>
         </div>
         {/* <img className="logo" src={navLogo} alt="logo" /> */}
+        <div className="navList">
         <div key="vill">
           <Link className="link" to="/villagers">
             <h3>Villagers</h3>
@@ -53,12 +62,20 @@ class Nav extends Component {
             <h3>Items</h3>
           </Link>
         </div>
+        </div>
         {/* <div key="home">
           <Link to="/">
             <img className="homebutton" src={homebutton} alt="home"></img>
           </Link>
         </div> */}
-        <img className="navicon" alt="villager" src={icon} />
+        <Link className="link vill-logo" to={`/villagers/${id}`}>
+        <img
+          className="navicon"
+          alt="villager"
+          src={icon}
+          onClick={this.onClick}
+        />
+        </Link>
       </div>
     );
   }

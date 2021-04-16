@@ -18,6 +18,15 @@ class SingleVillager extends Component {
       });
     });
   }
+  componentDidUpdate() {
+    api.getInfoById("villagers", this.props.villager_id).then((villager) => {
+      this.setState({
+        villager,
+        name: villager.name["name-EUen"],
+        isLoading: false,
+      });
+    });
+  }
   render() {
     const { villager, name, isLoading } = this.state;
     return (

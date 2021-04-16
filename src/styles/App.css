@@ -10,8 +10,18 @@
   justify-content: center;
   min-height: 100vh;
 }
+@media (max-width: 768px) {
+  .body {
+    flex-direction: column;
+  }
+}
 .content {
   width: 80%;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 768px) {
+  .content {
+    width: 100%;
+}
 }
